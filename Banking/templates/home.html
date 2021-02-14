@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRIPFEB21</title>
+    <style>
+    body{
+            background-image: linear-gradient(to right, #c2fdd8,#1D976C);
+        }
+    img { 
+           background-image: none;
+           float:right;
+           width: 35%;
+        }
+    .button
+    {
+      padding: 20px;
+      color:black;
+      margin-inline: 5px;
+      font-size: medium;
+      font-weight: bold;
+      align-self: center;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>{% for ab in posts %}
+    {{ ab.title }}
+    {% endfor %}</h1>
+    <button class="button" onclick="">Make Transaction</button>
+    <button class="button" onclick="">View Transaction</button>
+</body>
+</html>
