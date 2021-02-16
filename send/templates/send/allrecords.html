@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Transactions</title>
+    
+    <style>
+        button{
+            color: white;
+            background-color: limegreen;
+            height: 38px;
+            width: auto;
+            border-radius: 3px;
+            position: static;
+            right: 9%;
+        }
+       
+        span.op{
+            display: inline-block;
+            padding: 30px;
+            height: auto;
+            align-self: center;
+        }
+
+        span.t{
+            display: inline-block;
+            padding: 30px;
+            height: auto;
+            font-weight: bold;
+        }
+        
+        #sender{
+            width: 30%;
+        }
+        #reciever{
+            width: 30%;
+        }
+        #amount{
+            width: 22%;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center; margin: 30px;">Select a user from the list below to tansfer amount</h2>
+    
+    <div><span class="t" style="width: 30%;">SENDER</span>
+        <span class="t" style="width: 30%;">RECIEVER</span>
+        <span class="t" style="width: 22%;">AMOUNT</span>
+    </div>
+    {% for n in users %} 
+    <span class="op" id="sender">{{ n.send }}</span>
+    <span class="op" id="reciever">{{ n.receive }}</span>
+    <span class="op" id="amount">{{ n.amount }}</span>
+    {% endfor %}
+</body>
+</html>

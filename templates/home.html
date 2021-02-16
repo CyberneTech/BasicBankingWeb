@@ -6,7 +6,7 @@
     <title>GRIPFEB21</title>
     <style>
     body{
-            background-image: linear-gradient(to right, #c2fdd8,#1D976C);
+        background-image: linear-gradient(45deg, #20E2D7 0%, #F9FEA5 100%);
         }
     img { 
            background-image: none;
@@ -15,6 +15,7 @@
         }
     .button
     {
+      background-image: none;
       padding: 20px;
       color:black;
       margin-inline: 5px;
@@ -29,6 +30,7 @@
     <h1>{% for ab in posts %}
     {{ ab.title }}
     {% endfor %}</h1>
+    <img src="home.svg">
     <button class="button" onclick="">Make Transaction</button>
     <button class="button" onclick="">View Transaction</button>
 </body>
