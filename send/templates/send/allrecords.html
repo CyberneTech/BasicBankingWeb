@@ -12,8 +12,13 @@
             height: 38px;
             width: auto;
             border-radius: 3px;
-            position: static;
+            position: absolute;
+            top: 50%;
+            left: 50%;
             right: 9%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
         }
         span.op{
             display: inline-block;
@@ -52,7 +57,7 @@
     <span class="op" id="reciever">{{ transaction.receiver }}</span>
     <span class="op" id="amount">{{ transaction.amt }}</span>
     {% endfor %}
-    <a herf="/"><button>Return to Home</button></a>
+    <a href="/"><button>Return to Home</button></a>
     <script>
          document.cookie = 'flag=;Expires=Sat, 20 Feb 2021 09:21:01 GMT;';
     </script>

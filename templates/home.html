@@ -23,15 +23,19 @@
       font-weight: bold;
       align-self: center;
     }
-
+    .b{
+        position:absolute;
+        top:50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
     </style>
 </head>
 <body>
-    <h1>{% for ab in posts %}
-    {{ ab.title }}
-    {% endfor %}</h1>
-    <img src="home.svg">
-    <button class="button" onclick="">Make Transaction</button>
-    <button class="button" onclick="">View Transaction</button>
+    <div class="b">
+    <a href="/send/transfer"><button class="button">Make Transaction</button></a>
+    <a href="/send/view"><button class="button">View Transaction</button></a>
+    </div>
 </body>
 </html>
