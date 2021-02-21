@@ -15,7 +15,6 @@
             position: static;
             right: 9%;
         }
-       
         span.op{
             display: inline-block;
             padding: 30px;
@@ -48,10 +47,14 @@
         <span class="t" style="width: 30%;">RECIEVER</span>
         <span class="t" style="width: 22%;">AMOUNT</span>
     </div>
-    {% for n in users %} 
-    <span class="op" id="sender">{{ n.send }}</span>
-    <span class="op" id="reciever">{{ n.receive }}</span>
-    <span class="op" id="amount">{{ n.amount }}</span>
+    {% for transaction in transactions %} 
+    <span class="op" id="sender">{{ transaction.sender }}</span>
+    <span class="op" id="reciever">{{ transaction.receiver }}</span>
+    <span class="op" id="amount">{{ transaction.amt }}</span>
     {% endfor %}
+    <a herf="/"><button>Return to Home</button></a>
+    <script>
+         document.cookie = 'flag=;Expires=Sat, 20 Feb 2021 09:21:01 GMT;';
+    </script>
 </body>
 </html>

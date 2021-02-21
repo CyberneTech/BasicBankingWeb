@@ -72,7 +72,7 @@
     </style>
 </head>
 <body>
-    <h2 style="text-align: center; margin: 30px;">Select a user from the list below to tansfer amount</h2>
+    <h2 style="text-align: center; margin: 30px;">Select SENDER from the list below to tansfer amount</h2>
     <div>
         <span class="t" style="width: 30%;"><b>NAME</b></span>
         <span class="t" style="width: 22%;"><b>BALANCE</b></span>
@@ -80,15 +80,15 @@
     {% for ab in user %}
     <span class="op" id="name">{{ ab.name }}</span>
     <span class="op" id="amount">{{ ab.amount }}</span>
-    <button class="myBtn" onclick="Function()">SELECT</button>
+    <button class="myBtn" onclick="Function( {{ ab.id }} )">SELECT</button>
     {% endfor %}
-    
 <!-- The Modal -->
 <div id="myModal" class="modal">
   <div class="modal-content">
-    <form>
+    <form action="" method="POST">
+      {% csrf_token %}
         <label>Enter Amount:</label><br>
-        <input type="text"><br>
+        <input type="text" name="amt"><br>
         <button class="close">SELECT USER</button>
     </form>
   </div>
@@ -99,15 +99,15 @@ var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-function Function() {
+function Function(a) {
   modal.style.display = "block";
+  document.cookie = "uid1="+a;
+  console.log(document.cookie);
 }
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
 }
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {

@@ -6,6 +6,9 @@ class Users(models.Model):
     amount = models.IntegerField()
     class Meta:
         db_table = "Users"
+    
+    def __str__(self):
+        return self.name
 
 
 class Transaction(models.Model):
@@ -14,3 +17,8 @@ class Transaction(models.Model):
     amt = models.IntegerField()
     class Meta:
         db_table = "Transaction"
+
+    def __str__(self):
+        return (self.sender+' '+self.receiver)
+
+    

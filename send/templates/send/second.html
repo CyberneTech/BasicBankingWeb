@@ -36,7 +36,7 @@
     </style>
 </head>
 <body>
-    <h2 style="text-align: center; margin: 30px;">Select a user from the list below to tansfer amount</h2>
+    <h2 style="text-align: center; margin: 30px;">Select RECIEVER from the list below to tansfer amount</h2>
     <div>
         <span class="t" style="width: 30%;"><b>NAME</b></span>
         <span class="t" style="width: 22%;"><b>BALANCE</b></span>
@@ -44,7 +44,13 @@
     {% for ab in user %}
     <span class="op" id="name">{{ ab.name }}</span>
     <span class="op" id="amount">{{ ab.amount }}</span>
-    <button type="submit" >SELECT</button>
+    <a href="/send/transfer/"><button type="submit" onclick="Function( {{ab.id}} )">SELECT</button></a>
     {% endfor %}
+    <script>
+        function Function(a){
+         document.cookie = "uid2="+a;
+         document.cookie = "flag=true";
+        }
+    </script>
 </body>
 </html>
