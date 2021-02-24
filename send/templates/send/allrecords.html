@@ -6,6 +6,10 @@
     <title>List of Transactions</title>
     
     <style>
+        #b{
+            margin-top: 30px;
+            position: relative;
+        }
         button{
             color: white;
             background-color: limegreen;
@@ -53,11 +57,15 @@
         <span class="t" style="width: 22%;">AMOUNT</span>
     </div>
     {% for transaction in transactions %} 
+    <div>
     <span class="op" id="sender">{{ transaction.sender }}</span>
     <span class="op" id="reciever">{{ transaction.receiver }}</span>
     <span class="op" id="amount">{{ transaction.amt }}</span>
     {% endfor %}
+    </div>
+    <div id="b">
     <a href="/"><button>Return to Home</button></a>
+    </div>
     <script>
          document.cookie = 'flag=;Expires=Sat, 20 Feb 2021 09:21:01 GMT;';
     </script>

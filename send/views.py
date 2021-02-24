@@ -12,7 +12,7 @@ def transfer(request):
         response.set_cookie('amt',amt)
         uid1 = request.COOKIES['uid1']
         user1 = Users.objects.get(pk=uid1) 
-        if user1.amount>amt: 
+        if user1.amount>int(amt): 
             return response
         else:
             return render(request,'send/first.html',{'user':t})
